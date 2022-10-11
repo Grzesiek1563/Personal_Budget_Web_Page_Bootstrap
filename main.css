@@ -16,13 +16,7 @@ body
     color: white;
     width: 100%;
     text-align: center;
-    position: relative;
     padding: 10px;
-}
-
-.logoBar a:focus
-{
-    outline: none;
 }
 
 .logoBar p
@@ -44,58 +38,87 @@ body
     color: white;
 }
 
+.logoText:focus
+{
+    outline: none;
+}
 
-.buttons
+.text-secondary
+{
+    color: #214e51 !important;
+}
+
+.introduction
+{
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.introductionText
+{
+    text-align: justify;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.mainPageButtons
 {
     display: block;
-    position: absolute;
-    width: 150px;
+    width: 100%;
     text-decoration: none;
+    text-align: center;
     color: white;
     border-radius: 5px;
-    padding: 5px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 20px;
     border: none;
 }
 
-.primaryButton
+.mainPageLoginButton
 {
-    top: 20px;
-    right: 175px;
-    background-color: #e5bc4c;    
+    background-color: #e5bc4c; 
 }
 
-.primaryButton:hover
+.mainPageLoginButton:hover
 {
+    background-color: #e0ae25; 
     color: white;
-    background-color: #dec379;
 }
 
-.primaryButton:focus,
-.secondaryButton:focus
+.mainPageRegistrationButton
 {
+    background-color: #000506;
+    margin-bottom: 30px;
+}
+
+.mainPageRegistrationButton:hover
+{
+    background-color: #212121;
+    color: white;
+}
+
+.mainPageLoginButton:focus,
+.mainPageRegistrationButton:focus
+{
+    outline: none;
     -webkit-box-shadow: 0px 0px 10px 2px rgb(248, 246, 246);
 	-moz-box-shadow: 0px 0px 10px 2px rgb(248, 246, 246);
 	box-shadow: 0px 0px 10px 2px rgb(248, 246, 246);
 }
 
-.secondaryButton
+@media(min-width: 1200px) and (max-width: 1399px)
 {
-    top: 20px;
-    right: 15px; 
-    background-color: #4F7379;  
-}
-
-.secondaryButton:hover
-{
-    color: white;
-    background-color: #385A5C;
-}
-
-@media (max-width: 991px)
-{
-    .buttons
+    .mainButtonTopText
     {
-        display: none;
+        font-size: 22px;
+    }
+    .introduction .h3
+    {
+        font-size: 24px;
+    }
+    .introductionText
+    {
+        font-size: 17px;
     }
 }
