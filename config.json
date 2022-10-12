@@ -191,6 +191,12 @@
       "css": "lock",
       "code": 59404,
       "src": "fontawesome"
+    },
+    {
+      "uid": "212ab54aac31030950fec3e2448ebee9",
+      "css": "money-1",
+      "code": 59414,
+      "src": "modernpics"
     }
   ]
 }
