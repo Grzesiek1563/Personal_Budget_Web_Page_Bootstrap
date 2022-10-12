@@ -130,14 +130,14 @@ body
 
 }
 
-.registrationForm
+.registrationAndLoginForm
 {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 
-.registrationForm .btn
+.registrationAndLoginForm .btn
 {
     border: none;
     width: 100%;
@@ -145,37 +145,36 @@ body
     font-size: 20px;
 }
 
-.registrationForm .btn-primary
+.registrationAndLoginForm .btn-primary
 {
     background-color: #000506 !important; 
 }
 
-.registrationForm .btn-primary:hover,
-.registrationForm .btn-secondary:hover
+.registrationAndLoginForm .btn-primary:hover,
+.registrationAndLoginForm .btn-secondary:hover
 {
     background-color: #2a4446 !important; 
 }
 
-.registrationForm .btn-primary:focus,
-.registrationForm .btn-secondary:focus
+.registrationAndLoginForm .btn-primary:focus,
+.registrationAndLoginForm .btn-secondary:focus
 {
     -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
 	-moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
 	box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
 }
 
-.registrationForm .btn-secondary
+.registrationAndLoginForm .btn-secondary
 {
     background-color: #4F7379 !important;
 }
-
 
 .bg-primary
 {
     background-color: #E5D098 !important;
 }
 
-.registrationForm .h1
+.registrationAndLoginForm .h1
 {
     font-size: 70px;
 }
@@ -186,7 +185,7 @@ body
     font-weight: 700;
 }
 
-.registrationForm .form-control:focus
+.registrationAndLoginForm .form-control:focus
 {
     -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
     -moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
