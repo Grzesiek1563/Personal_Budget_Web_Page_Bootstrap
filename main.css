@@ -130,14 +130,14 @@ body
 
 }
 
-.registrationAndLoginForm
+.sheet
 {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 
-.registrationAndLoginForm .btn
+.sheet .btn
 {
     border: none;
     width: 100%;
@@ -145,26 +145,26 @@ body
     font-size: 20px;
 }
 
-.registrationAndLoginForm .btn-primary
+.sheet .btn-primary
 {
     background-color: #000506 !important; 
 }
 
-.registrationAndLoginForm .btn-primary:hover,
-.registrationAndLoginForm .btn-secondary:hover
+.sheet .btn-primary:hover,
+.sheet .btn-secondary:hover
 {
     background-color: #2a4446 !important; 
 }
 
-.registrationAndLoginForm .btn-primary:focus,
-.registrationAndLoginForm .btn-secondary:focus
+.sheet .btn-primary:focus,
+.sheet .btn-secondary:focus
 {
     -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
 	-moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
 	box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
 }
 
-.registrationAndLoginForm .btn-secondary
+.sheet .btn-secondary
 {
     background-color: #4F7379 !important;
 }
@@ -174,7 +174,12 @@ body
     background-color: #E5D098 !important;
 }
 
-.registrationAndLoginForm .h1
+.sheet a:focus
+{
+    outline: none;
+}
+
+.sheet .h1
 {
     font-size: 70px;
 }
@@ -185,7 +190,7 @@ body
     font-weight: 700;
 }
 
-.registrationAndLoginForm .form-control:focus
+.sheet .form-control:focus
 {
     -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
     -moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
