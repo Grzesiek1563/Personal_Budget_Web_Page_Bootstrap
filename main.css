@@ -62,6 +62,12 @@ body
     font-size: 18px;
 }
 
+.introPicture
+{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 .mainPageButtons
 {
     display: block;
@@ -109,7 +115,7 @@ body
 
 @media(min-width: 1200px) and (max-width: 1399px)
 {
-    .mainButtonTopText
+    .mainPageButtonTopText
     {
         font-size: 22px;
     }
@@ -121,4 +127,71 @@ body
     {
         font-size: 17px;
     }
+
+}
+
+.registrationForm
+{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.registrationForm .btn
+{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.registrationForm .btn-primary
+{
+    background-color: #000506 !important; 
+}
+
+.registrationForm .btn-primary:hover,
+.registrationForm .btn-secondary:hover
+{
+    background-color: #2a4446 !important; 
+}
+
+.registrationForm .btn-primary:focus,
+.registrationForm .btn-secondary:focus
+{
+    -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+	-moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+	box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+}
+
+.registrationForm .btn-secondary
+{
+    background-color: #4F7379 !important;
+}
+
+
+.bg-primary
+{
+    background-color: #E5D098 !important;
+}
+
+.registrationForm .h1
+{
+    font-size: 70px;
+}
+
+.decorativeFont
+{
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+}
+
+.registrationForm .form-control:focus
+{
+    -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+    -moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+    box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+    border: 1px solid black;
+    background-color: #dfdfdf;
+    color: black; 
 }

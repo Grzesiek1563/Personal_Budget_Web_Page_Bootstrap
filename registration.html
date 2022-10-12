@@ -2,14 +2,18 @@
 <html lang="pl">
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	
-	<title>Strona Główna</title>
+	<title>Rejestracja Użytkownika</title>
 	
 	<meta name="description" content="Już dziś załóż konto aby móc w szybki i darmowy sposób prowadzić swój budżet osobisty"/>
-	<meta name="keywords" content="bilans, wydatki, przychody, budżet, budżet osobisty, prowadzenie budżetu, darmowa aplikacja" />
+	<meta name="keywords" content="bilans, wydatki, przychody, budżet, budżet osobisty, prowadzenie budżetu, darmowa aplikacja, rejestracja, nowy użytkownik" />
 
+	<link rel="stylesheet" href="bootstrap_css/bootstrap.min.css">
 	<link rel="stylesheet" href="main.css" type="text/css"/>
+	<link rel="stylesheet" href="fontello_css/fontello.css">
+	 
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +22,49 @@
 </head>
 
 <body>
-	
+	<header>
+        <nav>  
+            <div class="logoBar">
+                <a href="mainPage.html" class="logoText">YourBudget.pl <i class="icon-wallet"></i> </a> 
+                <p> <i> ~ to make your life better </i></p>
+            </div>
+        </nav>
+    </header>
+	<main>
+		<article>
+			<div class="container">
+				<div class="row">
+					<div class="col-10 col-md-6 col-lg-4 col-xl-4 offset-1 offset-md-3 offset-lg-4 offset-xl-4 bg-primary pt-3 pb-4 px-4 text-center registrationForm">
+						<i class="icon-user-plus h1 text-light"></i>
+						<p class="decorativeFont h4">Rejestracja użytkownika</p>
+						<form action="register.php" method="post">
+							<div class="input-group mb-3 mt-4">
+								<span class="input-group-text" id="basic-addon-1"><i class="icon-user"></i></span>
+								<input type="text" name="name" placeholder="imię" class="form-control p-2" aria-label="Imię" aria-describedby="basic-addon1">
+							</div>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon-2"><i class="icon-mail-alt"></i></span>
+								<input type="email" name="email" placeholder="e-mail" class="form-control p-2" aria-label="Email" aria-describedby="basic-addon2">
+							</div>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon-3"><i class="icon-lock"></i></span>
+								<input type="password" name="password" placeholder="hasło" class="form-control p-2" aria-label="Hasło" aria-describedby="basic-addon3">
+							</div>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon-3"><i class="icon-lock"></i></span>
+								<input type="password" name="password_2" placeholder="powtórz hasło" class="form-control p-2" aria-label="Powtórz hasło" aria-describedby="basic-addon3">
+							</div>
+							<button type="submit" class="btn btn-primary mb-4">Zarejestruj się</button>
+						</form>
+						<a href="login.html" class="btn btn-secondary">Mam już konto</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
 
