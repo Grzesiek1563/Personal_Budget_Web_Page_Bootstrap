@@ -197,6 +197,12 @@
       "css": "money-1",
       "code": 59414,
       "src": "modernpics"
+    },
+    {
+      "uid": "b8e88705f42bd79580be828233c65da0",
+      "css": "money-2",
+      "code": 59415,
+      "src": "linecons"
     }
   ]
 }

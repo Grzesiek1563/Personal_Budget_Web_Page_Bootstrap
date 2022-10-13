@@ -136,7 +136,6 @@ body
     border-bottom-right-radius: 5px;
 }
 
-
 .sheet .btn
 {
     border: none;
@@ -169,10 +168,6 @@ body
     background-color: #4F7379 !important;
 }
 
-.bg-primary
-{
-    background-color: #E5D098 !important;
-}
 
 .sheet a:focus
 {
@@ -184,13 +179,30 @@ body
     font-size: 70px;
 }
 
+.sheet .form-check-label
+{
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+.sheet textarea
+{
+    resize: none;
+}
+
+.bg-primary
+{
+    background-color: #E5D098 !important;
+}
+
 .decorativeFont
 {
     font-family: 'Kalam', cursive;
     font-weight: 700;
 }
 
-.sheet .form-control:focus
+.sheet .form-control:focus,
+.sheet .form-select:focus
 {
     -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
     -moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
