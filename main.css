@@ -211,3 +211,27 @@ body
     background-color: #dfdfdf;
     color: black; 
 }
+
+.incomeSum p
+{
+    background-color: #000506;
+    border-radius: 5px;
+}
+
+.expenseSum p
+{
+    background-color: #385A5C;
+    border-radius: 5px;
+}
+
+.transactionDetails
+{
+    background-color: white;
+    border-radius: 5px;
+}
+
+.balance p
+{
+    background-color: rgb(45, 120, 45);
+    border-radius: 5px;
+}

@@ -203,6 +203,12 @@
       "css": "money-2",
       "code": 59415,
       "src": "linecons"
+    },
+    {
+      "uid": "413717f5ea649e8d8b93938be277264a",
+      "css": "calendar",
+      "code": 59416,
+      "src": "entypo"
     }
   ]
 }
