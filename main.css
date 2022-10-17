@@ -235,3 +235,13 @@ body
     background-color: rgb(45, 120, 45);
     border-radius: 5px;
 }
+
+.balanceHeaderText
+{
+    font-size: 40px;
+}
+
+.timePeriod
+{
+    width: 100%;
+}
