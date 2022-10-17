@@ -19,6 +19,45 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Expense', 'Amount'],
+          ['Jedzenie',     1],
+          ['Mieszkanie',      1],
+          ['Transport',  1],
+          ['Telekomunikacja', 1],
+          ['Opieka zdrowotna', 1],
+          ['Ubranie',    1],
+          ['Higiena',    1],
+          ['Dzieci',    1],
+          ['Rozrywka',    1],
+          ['Wycieczka',    1],
+          ['Szkolenia',    1],
+          ['Książki',    1],
+          ['Oszczędności',    1],
+          ['Na emeryturę',    1],
+          ['Spłata długów',    1],
+          ['Darowizna',    1],
+          ['Inne wydatki',    1]
+        ]);
+
+        var options = {
+          backgroundColor: '#E5D098', chartArea: {width:'100%',height:'100%', top:0, left: 0}, 
+		  legend:{position: 'right', alignment: 'center', textStyle:{fontSize: 16, fontName:'Mukta'}}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
 </head>
 
 <body>
@@ -68,7 +107,6 @@
 									  </div>
 									</div>
 								  </div>
-								
 							</div>
 							<div class="col-12 col-sm-6">
 								<header>
@@ -233,21 +271,24 @@
 							<div class="col-12 col-sm-5 transactionDetails p-0">
 								<p class="text-dark p-3 h5 mb-1">Przykładowa_kwota_1</p>
 							</div>
-
+							<div class="col-12">
+								<header>
+									<p class="balanceHeaderText decorativeFont my-3">Twoje wydatki</p>
+								</header>
+								<div id="pieChartBackground">
+									<div class="mb-4" id="pieChart"></div>			
+								</div>
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</article>
 	</main>
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
-	<script>
-		document.getElementById('my_selection').onchange = function() {
-			window.location.href = this.children[this.selectedIndex].getAttribute('href');
-		}
-		</script>
 </body>
 </html>
 

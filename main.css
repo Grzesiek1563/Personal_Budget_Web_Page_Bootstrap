@@ -244,3 +244,16 @@ body
 {
     width: 100%;
 }
+
+#pieChart
+{
+    width: 80%;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pieChartBackground
+{
+    background-color: #E5D098;
+}
