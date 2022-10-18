@@ -88,25 +88,28 @@
 										<li><a class="dropdown-item" href="#">Bieżący rok</a></li>
 										<li><a class="dropdown-item" data-bs-toggle="modal" href="#exampleModal" role="button">Niestandardowy</a></li>
 									</ul>
-								</div>
-								
+								</div>	
 								<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered">
-									  <div class="modal-content">
-										<div class="modal-header">
-										  <h5 class="modal-title" id="exampleModalLabel">Podaj zakres dat:</h5>
-										  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										<div class="modal-content">
+											<form action="showBalance.php" method="post">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel">Podaj zakres dat:</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													<p class="mt-0 mb-2">Od:</p>
+													<input type="date" name="fromDate" class="form-control p-2" min="2000-01-01" aria-label="Początkowa data zakresu">
+													<p class="my-2">Do:</p>
+													<input type="date" name="toDate" class="form-control p-2" min="2000-01-01" aria-label="Końcowa data zakresu">
+												</div>
+												<div class="modal-footer">
+													<button class="btn btn-primary">Potwierdź</button>
+												</div>
+											</form>
 										</div>
-										<div class="modal-body">
-										  ...
-										</div>
-										<div class="modal-footer">
-										  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										  <button type="button" class="btn btn-primary">Save changes</button>
-										</div>
-									  </div>
 									</div>
-								  </div>
+								</div>
 							</div>
 							<div class="col-12 col-sm-6">
 								<header>
@@ -265,12 +268,16 @@
 							<div class="col-12 col-sm-5 transactionDetails p-0">
 								<p class="text-dark p-3 h5 mb-1">Przykładowa_kwota_1</p>
 							</div>
-							<div class="col-12 col-sm-5 offset-sm-1 balance p-0">
-								<p class="text-light p-3 h5 mb-1">Bilans</p>
+							<div class="col-12 col-sm-5 offset-sm-1 expenseSum p-0">
+								<p class="text-light p-3 h5 mb-1">Bilans :</p>
 							</div>
 							<div class="col-12 col-sm-5 transactionDetails p-0">
 								<p class="text-dark p-3 h5 mb-1">Przykładowa_kwota_1</p>
 							</div>
+							<div class="col-10 offset-1  balance p-0">
+								<p class="text-light p-3 h5 mb-1">Gratulacje! Świetnie zarządzasz finansami!</p>
+							</div>
+							
 							<div class="col-12">
 								<header>
 									<p class="balanceHeaderText decorativeFont my-3">Twoje wydatki</p>

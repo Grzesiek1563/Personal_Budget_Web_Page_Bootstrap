@@ -257,3 +257,15 @@ body
 {
     background-color: #E5D098;
 }
+
+.summaryText
+{
+    color: rgb(45, 120, 45);
+}
+
+.btn-close:focus
+{
+    -webkit-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+    -moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+    box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
+}
