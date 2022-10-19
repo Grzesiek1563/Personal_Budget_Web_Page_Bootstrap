@@ -2,23 +2,299 @@
 <html lang="pl">
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	
-	<title>Strona Główna</title>
+	<title>Bilans</title>
 	
-	<meta name="description" content="Już dziś załóż konto aby móc w szybki i darmowy sposób prowadzić swój budżet osobisty"/>
-	<meta name="keywords" content="bilans, wydatki, przychody, budżet, budżet osobisty, prowadzenie budżetu, darmowa aplikacja" />
+	<meta name="description" content="Przeglądaj bilans z wybranego okresu"/>
+	<meta name="keywords" content="bilans, wydatki, przychody, budżet, budżet osobisty, prowadzenie budżetu, darmowa aplikacja, przychód, dodaj przychód"/>
 
+	<link rel="stylesheet" href="bootstrap_css/bootstrap.min.css">
 	<link rel="stylesheet" href="main.css" type="text/css"/>
+	<link rel="stylesheet" href="fontello_css/fontello.css">
+	 
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Expense', 'Amount'],
+          ['Jedzenie',     1],
+          ['Mieszkanie',      1],
+          ['Transport',  1],
+          ['Telekomunikacja', 1],
+          ['Opieka zdrowotna', 1],
+          ['Ubranie',    1],
+          ['Higiena',    1],
+          ['Dzieci',    1],
+          ['Rozrywka',    1],
+          ['Wycieczka',    1],
+          ['Szkolenia',    1],
+          ['Książki',    1],
+          ['Oszczędności',    1],
+          ['Na emeryturę',    1],
+          ['Spłata długów',    1],
+          ['Darowizna',    1],
+          ['Inne wydatki',    1]
+        ]);
+
+        var options = {
+          backgroundColor: '#E5D098', chartArea: {width:'100%',height:'100%', top:0, left: 0}, 
+		  legend:{position: 'right', alignment: 'center', textStyle:{fontSize: 16, fontName:'Mukta'}}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
 </head>
 
 <body>
-	
+	<header>
+		<div class="logoBar">
+			<a href="menu.html" class="logoText">YourBudget.pl <i class="icon-wallet"></i> </a> 
+			<p> <i> ~ to make your life better </i></p>
+		</div>
+    </header>
+	<main>
+		<article>
+			<div class="container">
+				<div class="row">
+					<div class="col-10 col-lg-8 offset-1 offset-lg-2 bg-primary pt-2 pb-4 px-4 text-center sheet">
+						<div class="row">
+							<div class="col-12 col-lg-6 col-xl-4 offset-lg-3 offset-xl-4 mb-3">
+								<header>
+									<p class="balanceHeaderText decorativeFont mt-2 mb-0">Bilans</p>
+								</header>
+								<div class="dropdown">
+									<button class="btn btn-primary dropdown-toggle" type="button" id="selectedTimePeriod" 
+									data-bs-toggle="dropdown" aria-expanded="false">
+										<i class="icon-calendar"></i> Wybierz okres
+									</button>
+									<ul class="dropdown-menu timePeriod" aria-labelledby="selectedTimePeriod">
+										<li><a class="dropdown-item" href="#">Bieżący miesiąc</a></li>
+										<li><a class="dropdown-item" href="#">Poprzedni miesiąc</a></li>
+										<li><a class="dropdown-item" href="#">Bieżący rok</a></li>
+										<li><a class="dropdown-item" data-bs-toggle="modal" href="#exampleModal" role="button">Niestandardowy</a></li>
+									</ul>
+								</div>	
+								<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content">
+											<form action="showBalance.php" method="post">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel">Podaj zakres dat:</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													<p class="mt-0 mb-2">Od:</p>
+													<input type="date" name="fromDate" class="form-control p-2" min="2000-01-01" aria-label="Początkowa data zakresu">
+													<p class="my-2">Do:</p>
+													<input type="date" name="toDate" class="form-control p-2" min="2000-01-01" aria-label="Końcowa data zakresu">
+												</div>
+												<div class="modal-footer">
+													<button class="btn btn-primary">Potwierdź</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-6 mb-3">
+								<header>
+									<p class="decorativeFont h3 mb-3">Przychody</p>
+								</header>
+								<div class="incomeSum">
+									<p class="text-light m-0 p-3 h5">Wynagrodzenie: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_2</p>
+								</div>
+								<div class="incomeSum">
+									<p class="text-light m-0 p-3 h5">Odsetki bankowe: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="incomeSum">
+									<p class="text-light m-0 p-3 h5">Sprzedaż na allegro: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="incomeSum">
+									<p class="text-light m-0 p-3 h5">Inne: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+							</div>
+							<div class="col-12 col-lg-6">
+								<header>
+									<p class="decorativeFont h3 mb-3">Wydatki</p>
+								</header>
+								<div class="expenseSum">
+									<p class="text-light  m-0 p-3 h5">Jedzenie: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_2</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light  m-0 p-3 h5">Mieszkanie: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light  m-0 p-3 h5">Transport: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light  m-0 p-3 h5">Telekomunikacja: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Opieka zdrowotna: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Ubranie: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Higiena: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Dzieci: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Rozrywka: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Wycieczka: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Szkolenia: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Książki: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Oszczędności: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Na emeryturę: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Spłata długów: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Darowizna: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark m-0 p-2">Przykładowa transakcja_1</p>
+								</div>
+								<div class="expenseSum">
+									<p class="text-light m-0 p-3 h5">Inne: (sumaryczna kwota)</p>
+								</div>
+								<div class="transactionDetails">
+									<p class="text-dark mb-4 p-2">Przykładowa transakcja_1</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<header>
+									<p class="balanceHeaderText decorativeFont mt-0 mb-2 my-lg-2">Podsumowanie</p>
+								</header>
+							</div>
+							<div class="col-12 col-lg-5 offset-lg-1 incomeSum p-0">
+								<p class="text-light p-3 h5 mb-1">Suma przychodów :</p>
+							</div>
+							<div class="col-12 col-lg-5 transactionDetails p-0">
+								<p class="text-dark p-3 h5 mb-1">Przykładowa_kwota_1</p>
+							</div>
+							<div class="col-12 col-lg-5 offset-lg-1 incomeSum p-0">
+								<p class="text-light p-3 h5 mb-1">Suma wydatków :</p>
+							</div>
+							<div class="col-12 col-lg-5 transactionDetails p-0">
+								<p class="text-dark p-3 h5 mb-1">Przykładowa_kwota_1</p>
+							</div>
+							<div class="col-12 col-lg-5 offset-lg-1 expenseSum p-0">
+								<p class="text-light p-3 h5 mb-1">Bilans :</p>
+							</div>
+							<div class="col-12 col-lg-5 transactionDetails p-0">
+								<p class="text-dark p-3 h5 mb-1">Przykładowa_kwota_1</p>
+							</div>
+							<div class="col-12 col-lg-10 offset-lg-1  balance p-0">
+								<p class="text-light p-3 h5 mb-1">Gratulacje! Świetnie zarządzasz finansami!</p>
+							</div>
+							
+							<div class="col-12">
+								<header>
+									<p class="balanceHeaderText decorativeFont my-3">Twoje wydatki</p>
+								</header>
+								<div class="mb-4" id="pieChart"></div>			
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</article>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
