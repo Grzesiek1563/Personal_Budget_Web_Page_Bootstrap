@@ -243,6 +243,13 @@ body
 .timePeriod
 {
     width: 100%;
+    background-color: #dfdfdf;
+}
+
+.timePeriod a
+{
+    font-weight: 700;
+    font-size: 17px;
 }
 
 #pieChart
@@ -251,11 +258,6 @@ body
     height: 350px;
     margin-left: auto;
     margin-right: auto;
-}
-
-#pieChartBackground
-{
-    background-color: #E5D098;
 }
 
 .summaryText
@@ -269,3 +271,7 @@ body
     -moz-box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
     box-shadow: 0px 0px 10px 2px rgb(49, 49, 49);
 }
+
+
+
+
