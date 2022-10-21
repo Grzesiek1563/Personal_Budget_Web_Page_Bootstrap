@@ -44,22 +44,13 @@
 							<div class="mb-3">
 								<input type="date" name="expenseDate" class="form-control p-2" value="2022-10-12" min="2000-01-01" aria-label="Data wydatku">
 							</div>
-							<div class="row">
-								<div class="col-8 offset-2">
-									<h2 class="decorativeFont h4 mt-2 mb-1">Forma płatności</h2>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="paymentType" id="flexRadioDefault1" checked>
-										<label class="form-check-label" for="flexRadioDefault1">Gotówka</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="paymentType" id="flexRadioDefault2">
-										<label class="form-check-label" for="flexRadioDefault2">Karta debetowa</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="paymentType" id="flexRadioDefault3">
-										<label class="form-check-label" for="flexRadioDefault3">Karta kredytowa</label>
-									</div>
-								</div>
+							<div class="input-group my-3">
+								<select class="form-select">
+									<option selected hidden>Forma płatności</option>
+									<option value="a">Gotówka</option>
+									<option value="b">Karta debetowa</option>
+									<option value="c">Karta kredytowa</option>
+								</select>
 							</div>
 							<div class="input-group my-3">
 								<select class="form-select">
