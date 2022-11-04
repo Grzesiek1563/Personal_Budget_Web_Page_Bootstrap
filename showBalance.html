@@ -19,43 +19,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Mukta:wght@400;700&display=swap" rel="stylesheet">
 
-	<script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-    	google.charts.load('current', {'packages':['corechart']});
-      	google.charts.setOnLoadCallback(drawChart);
-
-      	function drawChart() {
-			var data = google.visualization.arrayToDataTable([
-			['Expense', 'Amount'],
-			['Jedzenie',     1],
-			['Mieszkanie',      1],
-			['Transport',  1],
-			['Telekomunikacja', 1],
-			['Opieka zdrowotna', 1],
-			['Ubranie',    1],
-			['Higiena',    1],
-			['Dzieci',    1],
-			['Rozrywka',    1],
-			['Wycieczka',    1],
-			['Szkolenia',    1],
-			['Książki',    1],
-			['Oszczędności',    1],
-			['Na emeryturę',    1],
-			['Spłata długów',    1],
-			['Darowizna',    1],
-			['Inne wydatki',    1]
-			]);
-
-			var options = {
-			backgroundColor: '#E5D098', chartArea: {width:'100%',height:'100%', top:0, left: 0}, 
-			legend:{position: 'right', alignment: 'center', textStyle:{fontSize: 16, fontName:'Mukta'}}
-			};
-
-			var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
-
-			chart.draw(data, options);
-      	}
-    </script>
+	<script src="chart/dist/chart.js"></script>
+    <script src="main.js"></script>
 
 </head>
 
@@ -287,7 +252,11 @@
 									<header>
 										<h2 class="h6 decorativeFont my-3">Twoje wydatki</h2>
 									</header>
-									<div class="mb-4" id="pieChart"></div>
+									<div class="row">
+										<div class="chart-container col-12 col col-lg-10 col-xl-8 mb-3">
+											<canvas id="myChart"></canvas>
+										</div>
+									</div>
 								</section>		
 							</div>
 							<div class="col-12 col-sm-10 col-md-8 col-lg-6  offset-sm-1 offset-md-2 offset-lg-3  mt-3">
