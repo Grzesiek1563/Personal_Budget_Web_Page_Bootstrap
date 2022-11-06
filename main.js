@@ -22,7 +22,7 @@ function drawChart()
         ],
         datasets: [{
           label: 'My First Dataset',
-          data: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+          data: [50, 50, 50, 50, 50, 50, 50, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
@@ -50,6 +50,7 @@ function drawChart()
     type: 'pie',
     data: data,
     options: {
+        maintainAspectRatio: false,
         borderColor: '#fff',
         plugins: {
             legend: {
