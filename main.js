@@ -50,24 +50,32 @@ function drawChart()
     type: 'pie',
     data: data,
     options: {
-        maintainAspectRatio: false,
-        borderColor: '#fff',
-        plugins: {
-            legend: {
-                position: 'bottom',
-                maxHeight: 500,
-                align: 'center',
-                labels: {
-                    font: {size: 17, family: 'Mukta'},
-                    color: '#000506'
-                }
-            }
+      maintainAspectRatio: false,
+      borderColor: '#fff',
+      plugins: {
+        legend: {
+          position: 'bottom',
+          maxHeight: 500,
+          align: 'center',
+          labels: {
+              font: {size: 17, family: 'Mukta'},
+              color: '#000506'
+          }
+        },
+        tooltip: {
+        callbacks:{
+          beforeTitle: function(context) {
+            return 'Sumarycznie (PLN):';
+          }
         }
+        }
+      }   
     }
     };
     
+    var context = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(
-    document.getElementById('myChart'),
+    context,
     config
     );
 }
